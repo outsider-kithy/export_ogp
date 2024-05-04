@@ -20,8 +20,8 @@ router.post('/', function(req, res, next){
   //OGP画像を生成
   const canvas = createCanvas(1200, 630);
   const ctx = canvas.getContext('2d');
-  //ogp_template.jpgを読み込む
-  loadImage('public/images/ogp/ogp_template.jpg').then((image) => {
+  //ogp_template.pngを読み込む
+  loadImage('public/images/ogp/ogp_template.png').then((image) => {
       ctx.drawImage(image, 0, 0, 1200, 630);
       let fontSize = 60;
       ctx.font = `bold ${fontSize}px 'Arial'`;
@@ -43,7 +43,7 @@ router.post('/', function(req, res, next){
       }
     
       // PNG形式で保存
-      const out = fs.createWriteStream(`public/images/ogp/ogp_${date}.jpg`);
+      const out = fs.createWriteStream(`public/images/ogp/ogp_${date}.png`);
       const stream = canvas.createPNGStream();
       stream.pipe(out);
     });
