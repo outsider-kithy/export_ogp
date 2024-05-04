@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <form method="POST" action="/">
+      <label for="title">タイトル</label>
+      <input type="text" name="title" placeholder="OGP画像に表示するタイトルを入力">
+      <input type="submit" name="submit" value="OGP画像を作成">
+    </form>
+  </body>
+</html>
